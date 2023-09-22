@@ -1,23 +1,18 @@
 import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar';
-import Banner from './components/Banner';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import WeatherApp from './pages/WeatherApp';
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <Banner/>
-      <Skills/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={Home}/>
+        <Route path='/WeatherApp' element={WeatherApp}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
